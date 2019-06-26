@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.aaliyakhan.driverapp">
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" /> <!-- To allow starting foreground services on Android P+ -->
+    <!-- https://developer.android.com/preview/behavior-changes#fg-svc -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".Profile"></activity>
+        <activity android:name=".Login">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".Help" />
+
+        <meta-data
+            android:name="com.here.android.maps.appid"
+            android:value="GQJriHDgswMqLAplY5pO" />
+        <meta-data
+            android:name="com.here.android.maps.apptoken"
+            android:value="u_YUSxIM2lP-w51odD1T-Q" />
+        <meta-data
+            android:name="com.here.android.maps.license.key"
+            android:value="bG/NosF6kdxhpk37wz2jAawakzngnSZ0csdRWIeqNyfyMPoWQ56q9rbgMV+Y387BkFtsUgkkIjX3Eton9q5Tz4Er92tj9VLJQNLz5ptqrwDhgRP010UMOCu064hO5EePipztVsnTPAni9Y+ntchqkakLPXhVM5Xw1IzV29P7WD5AdHAwJ5TvAo8a92nXMe4vy0jfJqe0lpR/SDJYMj1jh5Quk89RMXLKqYjFzUTqLI34ASZR8fFFpEshgmSHXU5lFIG2hkJCORE3zkNJM+rJnzt8ga5h0JeUiL81j5iHy6eZp1oilfQYws42IGN0YHPF1/ItyZafZ1+uko8laX3nwFvI/WaAgmglVIMx+MGvLE7kkpwsbq7hqg5BFjvUSpsS4TgHMx6rAUFlRzdonSd3dVDf28WYVk+D9J7aDCYmu8KwnWGO+SloFsP4CwRDeKmrzS4kS5w8vtaWuaYR5bf9aHBkaHN6waypjgBFrP77gfJZN7DI32q0+e8uUeeJTCCHxQatU4F+MA52qRvHQu/SNJBMdKcEb37VYqZna8W9Y1kgP3k7BpnVBKJ3lG5KbdC/OJipx3FSNJgzjGLLE/SJ2dmgxFesQATqUA1IUt8kYU29AYsPNjCnZ59Yi8pVj81YKZK/IOijCsZ5ciXZJmDJieeAF5gDb3mMs0WmRRuSiqI=" />
+
+        <activity android:name=".MainActivity" />
+
+        <service
+            android:name="com.here.android.mpa.service.MapService"
+            android:exported="false"
+            android:label="label">
+            <intent-filter>
+                <action android:name="intent" />
+            </intent-filter>
+        </service>
+        <service android:name=".ForegroundService" />
+
+        <activity android:name=".Home"></activity>
+    </application>
+
+</manifest>
